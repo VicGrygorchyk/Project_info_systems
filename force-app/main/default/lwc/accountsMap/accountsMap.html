@@ -1,0 +1,27 @@
+<template>
+    <lightning-accordion allow-multiple-sections-open
+                         onsectiontoggle={openComponent}>
+        <lightning-accordion-section name="companies" label="Nearby Companies">
+            
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="10" padding="around-small">
+                    <lightning-map
+                        map-markers={mapItems}>
+                    </lightning-map>
+                </lightning-layout-item>
+                <lightning-layout-item size="2" padding="around-small">
+                    <lightning-input type="number" name="range" label="Range (km)" value={range} onchange={rangeChange}></lightning-input>
+                <lightning-accordion allow-multiple-sections-open>
+                    <lightning-combobox name="Sport"
+                        label="Sport"
+                        options={options}
+                        value={selectedSport}
+                        onchange={handleChange}>
+                    </lightning-combobox>
+                </lightning-accordion>  
+                </lightning-layout-item>
+            </lightning-layout> 
+        </lightning-accordion-section>
+    </lightning-accordion>
+
+</template>
